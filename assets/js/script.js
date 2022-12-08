@@ -1,4 +1,5 @@
 
+
 $(function () {
   // Declare global variables
   var date = dayjs();
@@ -30,4 +31,5 @@ $(function () {
 
     localStorage.setItem(buttonClick, textInput);
   })
+
 });
