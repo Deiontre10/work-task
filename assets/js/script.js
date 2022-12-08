@@ -10,24 +10,13 @@ $(function () {
     if (time < currentHour) {
       $(this).addClass("past")
     } else if (time === currentHour) {
-
+      $(this).addClass("present")
     } else {
-
-    }
+      $(this).addClass("future")
+    };
     
-  })
+  });
   
-  
-  // for (var i = 9; i <= 17; i++) {
-  //   if (currentHourP == hour) {
-  //     hour.addClass(".present")
-  //   } else if (currentHourP > hour) {
-  //     hour.addClass(".future")
-  //   } else {
-  //     hour.addClass(".past")
-  //   }
-  // }
-
   var saveButton = $(".saveBtn")
   saveButton.on("click", function(){
     var buttonClick = $(this).attr("id");
