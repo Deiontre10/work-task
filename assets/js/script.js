@@ -2,20 +2,31 @@
 $(function () {
   var date = dayjs();
   var currentHour = dayjs().hour();
-  var currentHourP = parseInt(currentHour);
-  var hour = $("#hour-")
-  console.log(hour);
-  $("#currentDay").text(date.format("YYYY MMMM DD | HH:mm:ss A"))
+  $("#currentDay").text(date.format("dddd, MMMM DD | HH:mm:ss A"))
+  var hour = $(".time")
  
-  for (var i = 9; i <= 17; i++) {
-    if (currentHourP === hour) {
-      hour.addClass(".present")
-    } else if (currentHourP > hour) {
-      hour.addClass(".future")
+  hour.each(function () {
+    var time = parseInt($(this).attr("id"))
+    if (time < currentHour) {
+      $(this).addClass("past")
+    } else if (time === currentHour) {
+
     } else {
-      hour.addClass(".past")
+
     }
-  }
+    
+  })
+  
+  
+  // for (var i = 9; i <= 17; i++) {
+  //   if (currentHourP == hour) {
+  //     hour.addClass(".present")
+  //   } else if (currentHourP > hour) {
+  //     hour.addClass(".future")
+  //   } else {
+  //     hour.addClass(".past")
+  //   }
+  // }
 
   var saveButton = $(".saveBtn")
   saveButton.on("click", function(){
