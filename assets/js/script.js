@@ -1,5 +1,4 @@
 
-
 $(function () {
   // Declare global variables
   var date = dayjs();
