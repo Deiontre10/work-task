@@ -20,7 +20,11 @@ $(function () {
     } else {
       $(this).addClass("future")
     };
-    
+
+    // Set the getItem localStorage to a variable to be reused
+    var userText = localStorage.getItem($(this).attr("id"));
+    // This with the find method finds the class description and then updated the value with the localStorage
+    $(this).find(".description").val(userText);
   });
   
   // Adds a click event to the save button that updates local storage
@@ -28,9 +32,7 @@ $(function () {
     var buttonClick = $(this).parent().attr("id");
     var textInput = $(this).siblings(".description").val();
 
-    localStorage.setItem(buttonClick, JSON.stringify(textInput));
-    console.log($(this).prev().val())
-    localStorage.getItem($(this).prev().val())
+    localStorage.setItem(buttonClick, textInput);
   });
 });
 
