@@ -1,4 +1,5 @@
 
+
 $(function () {
   // Declare global variables
   var date = dayjs();
@@ -26,9 +27,10 @@ $(function () {
   saveButton.on("click", function(){
     var buttonClick = $(this).parent().attr("id");
     var textInput = $(this).siblings(".description").val();
-    console.log(buttonClick);
 
-    localStorage.setItem(buttonClick, textInput);
-  })
-
+    localStorage.setItem(buttonClick, JSON.stringify(textInput));
+    console.log($(this).prev().val())
+    localStorage.getItem($(this).prev().val())
+  });
 });
+
